@@ -2,7 +2,10 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-
+// load secrets from .env file
+require('dotenv').config();
+// connect to a database with Mongoose
+require('./config/database');
 
 const app = express();
 
