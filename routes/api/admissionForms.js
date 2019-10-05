@@ -4,9 +4,9 @@ const admissionFormsCtrl = require('../../controllers/api/admissionForms');
 
 // GET /api/admissionForms
 router.get('/', admissionFormsCtrl.index);
-router.get('/:id', admissionFormsCtrl.show);
 router.post('/', admissionFormsCtrl.create);
-router.delete('/:id', admissionFormsCtrl.delete);
+router.get('/:id', admissionFormsCtrl.show);
 router.put('/:id', admissionFormsCtrl.update);
+router.delete('/:id', admissionFormsCtrl.delete);
 
 module.exports = router;
