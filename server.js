@@ -2,25 +2,29 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+
+
 // load secrets from .env file
 require('dotenv').config();
 // connect to a database with Mongoose
 require('./config/database');
 
+
+const admissionFormsRouter = require('./routes/api/admissionForms');
+
+
 const app = express();
-
-
-app.use(logger('dev'));
-app.use(express.json());
 
 
 // Configure both serve-favicon & static middlewares to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
 
 // Put API routes here, before the "catch all" route
-
+app.use('/api/admissionForms', admissionFormsRouter);
 
 
 // The following "catch all" route (note the *)is necessary for a SPA's client-side routing to properly work
