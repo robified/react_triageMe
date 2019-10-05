@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-
+const cors = require('cors');
 
 // load secrets from .env file
 require('dotenv').config();
@@ -17,6 +17,7 @@ const app = express();
 
 
 // Configure both serve-favicon & static middlewares to serve from the production 'build' folder
+app.use(cors());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.json());
