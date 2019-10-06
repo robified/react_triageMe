@@ -1,7 +1,7 @@
 import React from 'react'
 
 const NavBar = (props) => (
-    <div>
+    <div className="component">
         NavBar: I am a NavBar!
     </div>
 )
