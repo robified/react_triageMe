@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBar';
 
 class App extends Component {
     
@@ -13,7 +13,7 @@ class App extends Component {
     render() {
         console.log('App: render');
         return (
-            <div className="App">
+            <div className="App component">
                 <Route path='/navbar' render={(props) => (
                     <NavBar {...props}/>
                 )}/>
