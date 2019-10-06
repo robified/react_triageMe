@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cors = require('cors');
+const favicon = require('serve-favicon');
 
 // load secrets from .env file
 require('dotenv').config();
