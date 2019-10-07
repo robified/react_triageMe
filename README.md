@@ -3,13 +3,12 @@
 
 ### Technologies Used
 - A list of all technologies, libraries, APIs, etc. used in the project.
+
+### Getting Started
 - Trello
     - https://trello.com/b/7Zi0Jx0e
 - Heroku
     - https://triage-me.herokuapp.com
-
-### Getting Started
-- Links to the project's planning (Trello board) and the deployed app on Heroku.
 
 ### Unsolved Problems
 - List any unsolved issues.
