@@ -1,9 +1,11 @@
 import React from 'react'
 
-const NavBar = (props) => (
-    <div className="component">
-        NavBar: I am a NavBar!
-    </div>
-)
+const NavBar = props => {
+    return (
+        <div className="component">
+            <p>NavBar: I am a NavBar!</p>
+        </div>
+    );
+};
 
 export default NavBar;
