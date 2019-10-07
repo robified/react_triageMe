@@ -2,16 +2,38 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
 
-const NavBar = props => {
+const NavBar = (props) => {
+    //if a user is logged in show logout, else show login/signup
+    let navMust =
+        <>
+        <header>NavBar: I am a NavBar!</header>
+        <Link to='/'>Home</Link>
+        <Link to='/about'>About</Link>
+        <Link to='/admissionform'>Admission Form</Link>
+        </>
+    
+    let navUser = props.user ?
+      <div>
+        <Link to='' onClick={props.handleLogout}>
+            Logout
+        </Link>
+        <span>WELCOME, {props.user.name}</span>
+      </div>
+      :
+      <div>
+        <Link to='/login'>
+            Login
+        </Link>
+
+        <Link to='/signup'>
+            Sign Up
+        </Link>
+      </div>;
+    
     return (
         <div className={`component ${styles.NavBar}`}>
-            <header>NavBar: I am a NavBar!</header>
-            <Link to='/'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to='/admissionform'>Admission Form</Link>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/login'>Login</Link>
-            <Link to='/logout'>Logout</Link>
+            {navMust}
+            {navUser}
         </div>
     );
 };

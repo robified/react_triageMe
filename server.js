@@ -11,6 +11,7 @@ require('./config/database');
 
 
 const admissionFormsRouter = require('./routes/api/admissionForms');
+const usersRouter = require('./routes/api/users');
 
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/admissionForms', admissionFormsRouter);
+app.use('/api/users', usersRouter);
 
 
 // The following "catch all" route (note the *)is necessary for a SPA's client-side routing to properly work
