@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
 import AdmissionFormPage from '../AdmissionFormPage/AdmissionFormPage';
+import AboutPage from '../AboutPage/AboutPage';
 
 class App extends Component {
     
@@ -15,15 +16,48 @@ class App extends Component {
         console.log('App: render');
         return (     
             <div className="App component">
-                <header>App: Triage Me+!</header>
+                <header>
+                    <h1>App: Triage Me+!</h1>
+                </header>
+                
                 <Switch>
-                    <Route exact path='/' render={() =>
-                        <NavBar />    
+                    <Route exact path='/' render={(props) =>
+                        <>
+                            <NavBar {...props}/>
+                        </>
                     } />
 
-                    <Route exact path='/AdmissionFormPage' render={(props) => (
-                        <AdmissionFormPage {...props} />
+                    <Route exact path='/about' render={(props) => (
+                        <>
+                            <NavBar {...props}/>
+                            <AboutPage {...props} />
+                        </>
                     )}/>
+                    
+                    <Route exact path='/admissionform' render={(props) => (
+                        <>
+                            <NavBar {...props}/>
+                            <AdmissionFormPage {...props} />
+                        </>
+                    )}/>
+
+                    <Route exact path='/signup' render={(props) =>
+                        <>
+                            <NavBar {...props}/>
+                        </>
+                    } />
+
+                    <Route exact path='/login' render={(props) =>
+                        <>
+                            <NavBar {...props}/>
+                        </>
+                    } />
+
+                    <Route exact path='/logout' render={(props) =>
+                        <>
+                            <NavBar {...props}/>
+                        </>
+                    } />
                 </Switch>
             </div>
         )
