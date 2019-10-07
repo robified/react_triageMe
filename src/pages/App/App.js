@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
-import AdmissionFormPage from '../AdmissionFormPage/AdmissionFormPage';
 import AboutPage from '../AboutPage/AboutPage';
+import AdmissionFormPage from '../AdmissionFormPage/AdmissionFormPage';
 
 class App extends Component {
-    
+    constructor() {
+        super();
+        this.state = {
+            // Initialize user if there's a token, otherwise null
+            user: userService.getUser()
+        };
+    }
+      
     /*---------- Lifecycle Methods ----------*/
     componentDidMount() {
         console.log('App: componentDidMount');
