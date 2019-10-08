@@ -1,9 +1,11 @@
 import React from 'react';
+import NavBar from '../../components/NavBar/NavBar';
 
 const AboutPage = props => {
     return (
         <div className="component">
-           <p>About Page: What about me?</p> 
+            <NavBar/>
+            <p>About Page: What about me?</p> 
         </div>
     );
 };
