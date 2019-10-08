@@ -13,14 +13,14 @@ const NavBar = (props) => {
         </>
     
     let navUser = props.user ?
-      <div>
+      <>
         <Link to='' onClick={props.handleLogout}>
             Logout
         </Link>
         <span>WELCOME, {props.user.name}</span>
-      </div>
+      </>
       :
-      <div>
+      <>
         <Link to='/login'>
             Login
         </Link>
@@ -28,7 +28,7 @@ const NavBar = (props) => {
         <Link to='/signup'>
             Sign Up
         </Link>
-      </div>;
+      </>;
     
     return (
         <div className={`component ${styles.NavBar}`}>
