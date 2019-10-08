@@ -54,21 +54,19 @@ class App extends Component {
                         </>
                     }/>
 
-                    <Route exact path='/about' render={(props) => (
+                    <Route path='/about' render={(props) => (
                         <>
-                            <NavBar {...props}/>
                             <AboutPage {...props} />
                         </>
                     )}/>
                     
                     <Route exact path='/admissionform' render={(props) => (
                         <>
-                            <NavBar {...props}/>
                             <AdmissionFormPage {...props} />
                         </>
                     )}/>
 
-                    <Route exact path='/signup' render={({history}) =>
+                    <Route path='/signup' render={({history}) =>
                         <>
                             <SignupPage
                                 history={history}
@@ -77,7 +75,7 @@ class App extends Component {
                         </>
                     }/>
 
-                    <Route exact path='/login' render={({history}) =>
+                    <Route path='/login' render={({history}) =>
                         <>
                             <LoginPage
                                 history={history}
@@ -86,7 +84,7 @@ class App extends Component {
                         </>
                     }/>
 
-                    <Route exact path='/logout' render={(props) =>
+                    <Route path='/logout' render={(props) =>
                         <>
                             <NavBar {...props}/>
                         </>
