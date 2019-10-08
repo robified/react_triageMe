@@ -32,10 +32,12 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="component">
         <NavBar/>
 
-        <header>Log In</header>
+        <header>
+          <h1>LoginPage:Log In</h1>
+        </header>
         
         <form onSubmit={this.handleSubmit} >
           <div>
