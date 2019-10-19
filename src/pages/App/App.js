@@ -8,7 +8,6 @@ import SignupPage from '../SignupPage/SignupPage';
 import AboutPage from '../AboutPage/AboutPage';
 import AdmissionFormPage from '../AdmissionFormPage/AdmissionFormPage';
 
-
 class App extends Component {
     constructor() {
         super();
@@ -29,21 +28,14 @@ class App extends Component {
     handleSignupOrLogin = () => {
         this.setState({user: userService.getUser()});
     }
-
-      
+    
     /*---------- Lifecycle Methods ----------*/
-    componentDidMount() {
-        console.log('App: componentDidMount');
-    }
+    
      
     render() {
-        console.log('App: render');
+        
         return (     
-            <div className="App component">
-                <header>
-                    <h1>App: Triage Me+!</h1>
-                </header>
-                
+            <div className="App component">                
                 <Switch>
                     <Route exact path='/' render={(props) =>
                         <>
@@ -51,33 +43,53 @@ class App extends Component {
                                 user={this.state.user}
                                 handleLogout={this.handleLogout}
                             />
+                            
+                            <header>
+                                <h1>App: Triage Me+!</h1>
+                            </header>
                         </>
                     }/>
 
                     <Route path='/about' render={(props) => (
                         <>
+                            <NavBar
+                                user={this.state.user}
+                                handleLogout={this.handleLogout}
+                            />
                             <AboutPage {...props} />
                         </>
                     )}/>
                     
                     <Route exact path='/admissionform' render={(props) => (
                         <>
+                            <NavBar
+                                user={this.state.user}
+                                handleLogout={this.handleLogout}
+                            />
                             <AdmissionFormPage {...props} />
                         </>
                     )}/>
 
-                    <Route path='/signup' render={({history}) =>
+                    <Route path='/login' render={({history}) =>
                         <>
-                            <SignupPage
+                            <NavBar
+                                user={this.state.user}
+                                handleLogout={this.handleLogout}
+                            />
+                            <LoginPage
                                 history={history}
                                 handleSignupOrLogin={this.handleSignupOrLogin}
                             />
                         </>
                     }/>
 
-                    <Route path='/login' render={({history}) =>
+                    <Route path='/signup' render={({history}) =>
                         <>
-                            <LoginPage
+                            <NavBar
+                                user={this.state.user}
+                                handleLogout={this.handleLogout}
+                            />
+                            <SignupPage
                                 history={history}
                                 handleSignupOrLogin={this.handleSignupOrLogin}
                             />
@@ -86,7 +98,10 @@ class App extends Component {
 
                     <Route path='/logout' render={(props) =>
                         <>
-                            <NavBar {...props}/>
+                            <NavBar
+                                user={this.state.user}
+                                handleLogout={this.handleLogout}
+                            />
                         </>
                     }/>
                 </Switch>
