@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
-import NavBar from '../../components/NavBar/NavBar';
 
 class LoginPage extends Component {
   state = {
@@ -33,11 +32,11 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="component">
-        <NavBar/>
-
         <header>
-          <h1>LoginPage:Log In</h1>
+          <p>Login Page: I am a Login Page!</p>
         </header>
+
+        <h1>Log In</h1>
         
         <form onSubmit={this.handleSubmit} >
           <div>
