@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from '../../components/NavBar/NavBar';
+import AdmissionForm from '../../components/AdmissionForm/AdmissionForm';
 
 const AdmissionFormPage = props => {
     return (
         <div className="component">
-            <NavBar />
-            <p>AdmissionFormPage: I am an AdmissionFormPage!</p>
+            <p>AdmissionForm Page: I am an AdmissionFormPage!</p>
+            <AdmissionForm />
         </div>
     );
 };
